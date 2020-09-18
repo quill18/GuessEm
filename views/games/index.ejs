@@ -1,0 +1,17 @@
+<%- include( __basedir + "/views/templates/header"); %>
+
+<div>
+    <a href="/games/new">Start a new match</a>
+</div>
+
+<div>
+    <h1>Currently Active Games</h1>
+
+    <% if( Array.isArray(activeGames) && activeGames.length > 0 ) { %>
+        <%- include("partials/gameList", { activeGames: activeGames }); %>
+    <% } else { %>
+        No active games!
+    <% } %>
+</div>
+
+<%- include( __basedir + "/views/templates/footer"); %>
